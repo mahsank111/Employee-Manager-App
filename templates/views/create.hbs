@@ -1,0 +1,28 @@
+<!-- views/create.hbs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    {{>header}}
+    <div class="container">
+        <h1>Add Employee</h1>
+        <form action="/create" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required>
+
+            <button type="submit">Add Employee</button>
+        </form>
+        <a href="/list">List Employees</a>
+    </div>
+    {{>footer}}
+</body>
+</html>

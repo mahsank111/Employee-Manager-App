@@ -1,0 +1,26 @@
+<!-- views/list.hbs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Employees</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  {{>header}}
+    <div class="container">
+        <h1>List Employees</h1>
+        <ul>
+            {{#each employees}}
+                <li>
+                    <strong>Name:</strong> {{this.name}}<br>
+                    <strong>Phone:</strong> {{this.phone}}<br>
+                    <strong>Email:</strong> {{this.email}}<br>
+                    <strong>Department:</strong> {{this.department}}
+                </li>
+            {{/each}}
+        </ul>
+        <a href="/create">Add Employee</a>
+    </div>
+    {{>footer}}
+</body>
+</html>

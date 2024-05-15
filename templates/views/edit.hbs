@@ -1,0 +1,42 @@
+<!-- views/edit.hbs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    {{>header}}
+    <div class="container">
+        <h1>Edit Employee</h1>
+        <form action="/select-employee" method="POST">
+            <label for="employee">Select Employee:</label>
+            <select id="employee" name="employee">
+                {{#each employees}}
+                <option value="{{this.name}}" name="employee">{{this.name}}</option>
+                {{/each}}
+            </select>
+            <button type="submit">Select</button>
+        </form>
+
+        {{#if selectedEmployee}}
+        <h2>Edit Employee Details</h2>
+        <form action="/update/{{selectedEmployee.name}}" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{selectedEmployee.name}}" required>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" value="{{selectedEmployee.phone}}" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{selectedEmployee.email}}" required>
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" value="{{selectedEmployee.department}}" required>
+            <button type="submit">Save Changes</button>
+        </form>
+        {{/if}}
+    </div>
+    {{>footer}}
+</body>
+
+</html>

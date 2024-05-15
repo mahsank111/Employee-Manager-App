@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chalk": "^4.1.2",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "hbs": "^4.2.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.2",
+    "yargs": "^17.7.2"
+  }
+}

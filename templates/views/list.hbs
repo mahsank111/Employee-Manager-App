@@ -1,17 +1,72 @@
-<!-- views/list.hbs -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>List Employees</title>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .employee-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .employee-item {
+            background-color: #f9f9f9;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .employee-item strong {
+            color: #555;
+        }
+
+        .add-employee {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .add-employee:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
   {{>header}}
     <div class="container">
         <h1>List Employees</h1>
-        <ul>
+        <ul class="employee-list">
             {{#each employees}}
-                <li>
+                <li class="employee-item">
                     <strong>Name:</strong> {{this.name}}<br>
                     <strong>Phone:</strong> {{this.phone}}<br>
                     <strong>Email:</strong> {{this.email}}<br>
@@ -19,7 +74,7 @@
                 </li>
             {{/each}}
         </ul>
-        <a href="/create">Add Employee</a>
+        <a class="add-employee" href="/create">Add Employee</a>
     </div>
     {{>footer}}
 </body>

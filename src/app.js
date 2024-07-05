@@ -157,7 +157,7 @@ app.post("/signup", async (req, res) => {
 
   // Save the user information (e.g., username, email, hashedPassword) to your database or file
 
-  // Redirect to the home page after successful signup
+  // Redirect to the home page after successful signup || though it's not working properly as expected. 
   res.redirect("/");
 });
 
